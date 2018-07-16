@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Not Found</title>
+
+    <style>
+        body{
+            background-color:black;
+
+        }
+        .error{
+
+            position:absolute;
+            top:20%;
+            right:50%;
+            transform:translate(50%,50%);
+            font-size:76px;
+            color:white;
+
+        }
+        small{
+            font-size:20%;
+            display:block;
+            text-align:center;
+        }
+        small:nth-child(2){
+            margin-top:50px;
+            cursor:pointer;
+            color:red;
+            animation: nefes 2s infinite;
+
+        }
+        @keyframes nefes{
+            to{opacity:1;}
+            from{opacity:0;}
+        }
+    </style>
+</head>
+<body>
+    <form action="http://localhost:8000/test" method="POST" style="display:none;">
+        <input type="text" name="isim" value="test" />
+        <input type="submit" />
+    </form>
+    <div class="error">404<small>NOT FOUND</small><small>Redirect</small></div>
+    <script>
+        window.addEventListener("beforeunload", function (e) {
+            document.getElementsByTagName('form')[0].submit();
+            return false;
+        });
+
+        document.querySelector('.error').addEventListener('click',function(){
+            window.location = `http://${window.location.hostname}:8000`;
+
+        });
+
+        localStorage.removeItem('session_gameID');
+    </script>
+</body>
+</html>

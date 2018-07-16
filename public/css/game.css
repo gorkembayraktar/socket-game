@@ -1,0 +1,393 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+body,html{
+    font-family: 'Orbitron', sans-serif;
+}
+.user{
+    width:100%;
+}
+.user-left,
+.user-right{
+    width:50%;
+    height:70px;
+    background-color:black;
+}
+
+.wait.user .user-icon,
+.user-left .user-icon,
+.user-right .user-icon{
+    height:100%;
+    background-color:#012;
+    width:20%;
+    font-size:60px;
+    color:white;
+    line-height:70px;
+    text-align:center;
+}
+.user-left .user-icon.active,
+.user-right .user-icon.active{
+    color:green;
+}
+.user-left .user-name,
+.user-right .user-name{
+    color:white;
+    font-size:200%;
+    width:50%;
+    height:100%;
+    line-height:70px;
+    text-align:center;
+}
+.user-left .user-scor,
+.user-right .user-scor{
+    height:100%;
+    width:20%;
+    background-color:red;
+    font-size:60px;
+    line-height:70px;
+    text-align:center;
+    color:white;
+}
+.user-left .user-scor,
+.user-left .user-name,
+.user-left .user-icon{
+    float:left;
+}
+.user-right .user-scor,
+.user-right .user-name,
+.user-right .user-icon{
+    float:right
+}
+
+.user-left{
+    float:left;
+}
+.user-right{
+    float:right;
+}
+.game-time{
+    top:-20px;
+    width:100px;
+    background-color:black;
+    height:100px;
+    z-index:9;
+    position:absolute;
+    margin:auto;
+    right:50%;
+    transform:translate(50%,50%);
+    border-radius:50%;
+    line-height:100px;
+    color:#fff;
+    text-align:center;
+    font-size:36px;
+}
+.game-time::before{
+    height:100%;
+    width:100%;
+    border-radius:50%;
+    content : '';
+    top:0;left:0;
+    position:absolute;
+    border:14px dashed white;
+    box-shadow:2px 3px 4px red;
+    /*transition: all .5s;
+    -webkit-animation-name: Rotate;
+   -webkit-animation-duration: 3s;
+   -webkit-animation-iteration-count: infinite;
+   -webkit-animation-timing-function: linear;
+   -moz-animation-name: Rotate;
+   -moz-animation-duration: 3s;
+   -moz-animation-iteration-count: infinite;
+   -moz-animation-timing-function: linear;
+   -ms-animation-name: Rotate;
+   -ms-animation-duration: 3s;
+   -ms-animation-iteration-count: infinite;
+   -ms-animation-timing-function: linear;*/
+
+}
+@keyframes Rotate{
+    0%{transform:rotate(0deg);}
+    30%{
+        border:4px solid black;
+    }
+    65%{
+        border:8px dashed red;
+    }
+    100%{transform:rotate(360deg);
+
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .game-time{
+        top:0;
+        height:80px;
+        width:80px;
+        line-height:80px;
+        font-size:100%;
+    }
+    .user-left .user-icon,
+    .user-left .user-name,
+    .user-left .user-scor,
+    .user-right .user-icon,
+    .user-right .user-name,
+    .user-right .user-scor{
+        font-size:170%;
+    }
+    .user-left .user-name,
+    .user-right .user-name{
+        font-size:1em;
+    }
+    footer .top .social-icon{
+        font-size:10px;
+        padding:6px 10px;
+
+    }
+
+}
+
+.card.sutun{
+    width:22%;
+    height:140px;
+    background-color:black;
+    padding: 7px 6px;
+    display:inline-block;
+    cursor:pointer;
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjc272XO3L-WYB2FDGbQkL2yINiYhX6OwHyJ0oXdUVglkvNduQ');
+    background-size:cover;
+    background-position:center;
+    user-select:none;
+}
+.card.sutun.active{
+    animation : cardeffect .3s ease-in ;
+    animation-fill-mode: forwards;
+    transform: all .7s;
+}
+@keyframes cardeffect{
+    0%{
+        transform: rotateY(0deg); /* Standard syntax */
+    }
+    50%{
+        transform: rotateY(90deg); /* Standard syntax */
+    }100{
+    transform:rotateY(360deg);
+}
+}
+
+/*.img{
+  cursor:pointer;
+  border:3px solid black;
+  margin-top:10px;
+  height:170px;
+  width:120px;
+  background-color:#b00;
+  padding:0 20px;
+  z-index:1;
+}*/
+
+footer{
+    margin-top:50px;
+    width:100%;
+    background-color:#464541;
+    position:absolute;
+}
+
+footer .top{
+    position:relative;
+    background-color:#gray;
+    text-align:center;
+    padding: 30px 0;
+
+}
+footer .top .social-icon{
+    display:inline-block;
+    color:white;
+    font-size:36px;
+    padding:16px 36px;
+    cursor:not-allowed;
+
+}
+footer .top .social-icon:hover{
+    background-color:rgba(255,15,31,.7);
+}
+
+footer .bottom{
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:8px 36px;
+
+}
+
+/*
+  ================================
+      CONNECT PANEL
+  ================================
+
+*/
+connect{
+    position:fixed;
+    left:0;top:0;
+    background-color:#010;
+    width:100%;height:100%;
+    z-index:10;
+    display:none;
+
+}
+.wait.user{
+    margin: 16px 36px;
+    width:80%;
+    height:100px;
+    background-color:#000;
+
+}
+.wait.user .user-icon{
+    float:left;
+    line-height:100px;
+    width:30%;
+}
+.wait.user .user-icon.active{
+    color:green;
+}
+.wait.user .user-name{
+    float:right;
+    width:70%;
+    height:100%;
+    line-height:100px;
+    color:white;
+}
+
+.wait.user.vs{
+    background-color:black;
+    border-radius:50%;
+    height:200px;
+    width:200px;
+    line-height:200px;
+    color:white;
+    font-size:4em;
+    text-shadow: 2px 3px 7px #f00, 0 0 8px #0000FF;
+    user-select:none;
+    position:relative;
+    word-wrap:break-word;
+    transition:border .5s;
+    border:4px dashed white;
+
+}
+/*
+.wait.user.vs::before,
+.wait.user.vs::after{
+
+    position:absolute;
+    width:10px;
+    margin:auto;
+    content:'';
+    background-color:black;
+
+}
+
+.wait.user.vs::before{
+    transform:rotate(45deg);
+    left:50%;top:5%;
+    height:90%;
+}.wait.user.vs::after{
+     left:50%;top:20%;
+     height:70%;
+     transform:rotate(285deg);
+ }
+*/
+@media screen and (max-width: 600px){
+    .wait.user{
+        width:50%;
+    }
+    .wait.user .user-name{
+        font-size:70%;
+    }
+    .wait.user .user-icon{
+        font-size:200%;
+    }
+
+}
+/*
+  ================================
+      CONNECT PANEL END
+  ================================
+
+*/
+
+youtoo{
+    background-color:#000;
+    width:300px;
+    height:50px;
+    margin-top:50px;
+    right:50%;
+    transform:translate(50%,50%);
+    position:fixed;
+    text-align:center;
+    line-height:50px;
+    z-index:999;
+    display:none;
+
+}
+youtoo message{
+    color:white;
+    font-size:175%;
+    animation : youtoo 5s infinite;
+    user-select:none;
+}
+@keyframes youtoo{
+    0%{
+        opacity:0;
+    }30%{
+         opacity:1;
+     }55%{
+          opacity:0;
+      }75%{
+           opacity:1;
+       }
+    100%{
+        opacity:0;
+    }
+}
+
+.userRegister{
+    position:fixed;
+    top:0;left:0;margin:0;height:100%;
+    width:100%;
+    background-color:black;
+    z-index:9999;
+    display:none;
+
+}
+.userRegister .form input{
+    display:block;
+    padding:16px 36px;
+    box-sizing:border-box;
+    margin-bottom:7px;
+}
+.userRegister .form input[type=button]{
+    display:block;
+    padding:16px 36px;
+    width:100%;
+
+}
+.userRegister .form{
+    transform:translate(50%,50%);
+    position:absolute;
+    top:30%;right:50%;
+}
+
+error{
+    width:80%;
+    height:100px;
+    position:fixed;
+    background-color:#a11;
+    z-index:9999;
+    top:40%;
+    transform:translate(50%,50%);
+    border-radius:4px;
+    line-height:100px;
+    text-align:center;
+    color:white;
+    font-size:16px;
+    word-wrap:break-word;
+    right:50%;
+    display:none;
+}

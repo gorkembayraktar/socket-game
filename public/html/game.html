@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wellcome tooo game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/game.css">
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" >
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="user">
+        <div class="user-left">
+            <div class="user-icon active">
+                <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="user-name" id="uL">
+                OKÇU >
+            </div>
+            <div class="user-scor">
+                1
+            </div>
+        </div>
+        <div class="user-right">
+            <div class="user-icon">
+                <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="user-name" id="uR">
+                ROMAN >
+            </div>
+            <div class="user-scor">
+                0
+            </div>
+
+        </div>
+
+        <div class="game-time">
+            30
+        </div>
+    </div>
+
+</nav>
+
+<youtoo>
+    <message>Senin Sıran</message>
+</youtoo>
+
+
+
+<div class="container" style="margin-top:50px;">
+    <div class="row justify-content-center">
+        <div id="collection" class="col-12" align="center">
+        </div>
+    </div>
+</div>
+
+
+<footer>
+    <div class="top">
+        <div class="social-icon">
+            <i class="fab fa-facebook-square"></i>
+        </div>
+        <div class="social-icon">
+            <i class="fab fa-instagram"></i>
+        </div>
+        <div class="social-icon">
+            <i class="fab fa-codepen"></i>
+        </div>
+        <div class="social-icon">
+            <i class="fab fa-github"></i>
+        </div>
+
+        <div class="social-icon">
+            <i class="fab fa-twitter-square"></i>
+        </div>
+
+
+
+    </div>
+    <div class="bottom">Copyrigh @</div>
+
+</footer>
+
+
+
+
+<connect>
+    <div class="container" style="margin-top:60px;">
+        <div class="row">
+
+            <div class="col-12 col-md-4 col-xs-12" align="center">
+
+                <div class="wait user">
+                    <div class="user-icon active left">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="user-name" id="us-0">USER #1</div>
+                </div>
+
+
+            </div>
+            <div class="col-12 col-md-4 col-xs-12" align="center">
+                <div class="wait user vs" id="vsTime">VS</div>
+
+            </div>
+            <div class="col-12 col-md-4 col-xs-12" align="center">
+
+                <div class="wait user">
+                    <div class="user-icon right" id="rightG">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="user-name" id="us-1">Waiting...</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</connect>
+
+
+<div class="userRegister">
+    <div class="form">
+        <input type="text" name="username" placeholder="Kullanıcı adı boş olamaz">
+        <input type="button" onclick="userSet()" value="BAŞLAT"/>
+    </div>
+</div>
+
+<error> Oda Doldu. Yeni oda açın.<br>Anasayfaya yönlendiriliyor..</error> <!-- error code -->
+
+<script src="../public/js/bootstrap.min.js"></script>
+<script src="../public/js/socket.js"></script>
+<script src="../public/js/popper.min.js"></script>
+<script src="../public/js/jquery-3.3.1.slim.min.js"></script>
+<script src="../public/js/game.js"></script>
+
+</body>
+</html>

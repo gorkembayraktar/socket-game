@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wellcome to game ...</title>
+    <link rel="stylesheet" href="./public/css/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<header>
+    <form action="/" method="POST" id="form">
+        <input type="text" name="user" autocomplete="off" placeholder="Kullanıcı adın" />
+        <input type="submit" onclick="reg()" value="Oluştur" />
+    </form>
+</header>
+
+<script src="./public/js/socket.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+<script>
+    if(localStorage.getItem('session_gameID')) {
+        let hidden = document.createElement('input');
+        hidden.setAttribute('type',"hidden");
+        hidden.setAttribute('value',`${localStorage.getItem('session_gameID')}`);
+        hidden.setAttribute('name','game_key');
+        document.getElementById('form').appendChild(hidden);
+    }
+
+    function reg(){
+        localStorage.setItem('reg_username',$("input[name=user]").val());
+    }
+
+    $(function () {
+        $username = localStorage.getItem('reg_username') || "";
+        if($username)
+            $('input[name=user]').prop('disabled',true);
+        $('input[name=user]').val($username);
+
+        if(localStorage.getItem('session_gameID')){
+            $("input[type=submit]").val('Aktif oyuna yönlendir >>');
+        }
+
+
+
+        let socket = io();
+
+    });
+</script>
+</body>
+</html>
